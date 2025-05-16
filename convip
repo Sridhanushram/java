@@ -1,0 +1,63 @@
+Scanner dhanush=new Scanner(System.in);
+        int choice;
+        ArrayList<Acer> ram1=new ArrayList<>();
+        do
+       // while(true)
+        {
+            System.out.println("1.entry:::2.search");
+            choice=dhanush.nextInt();
+            dhanush.nextLine();
+            if(choice==1)
+            {
+                System.out.print("enter the model::");
+                String model=dhanush.nextLine();
+                
+                System.out.print("enter the color::");
+                String color=dhanush.nextLine();
+                
+                
+                System.out.print("rgbkeyboard(true/false)::");
+                boolean key=dhanush.nextBoolean();
+                dhanush.nextLine();
+                
+                System.out.print("enter the processor::");
+                String processor=dhanush.nextLine();
+               
+                
+                System.out.print("enter the price::");
+                int price=dhanush.nextInt();
+                dhanush.nextLine();
+                
+               ram1.add(new Acer(model,color,key,processor,price));
+          /*   Acer ram=new Acer(model,color,key,processor,price);
+             ram1.add(ram);
+             /*for(Acer laptop:ram1)
+             {
+                 laptop.display();
+             }*/
+            }
+            }while(choice==1);
+            if(choice==2)
+            {
+                System.out.println("enter the laptop model::");
+                String model=dhanush.nextLine();
+                
+                for(Acer laptop:ram1)
+                {
+                    if(laptop.model.equals(model))
+                    {
+         
+                        laptop.display();
+                        break;
+                    }
+                 }
+            }
+        
+                else
+                    {
+                        System.out.println("laptop not found");
+                    }
+           
+            
+        }
+        
